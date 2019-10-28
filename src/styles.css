@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+.block-user{
+  border: 1px solid #ccc;
+  margin: 5px;
+
+
+}
+.block-user:hover{
+  background: rgb(247, 240, 240);
+}
+
+.recived-class{
+  padding: 2px 5px;
+  border: 1px solid rgb(66, 201, 189);
+  background: rgb(66, 201, 189);
+  float: left;
+  margin-top:5px;
+  display: inline-block;
+  clear:both;
+}
+
+.send-class{
+  padding: 2px 5px;
+  border: 1px solid rgb(85, 204, 55);
+  background: rgb(85, 204, 55);
+  float: right;
+  margin-top:5px;
+  display: inline-block;
+  clear:both;
+}
+.online_status{
+  color:rgb(90, 88, 206);
+  font-weight: 800;
+  font-size: 9px;
+}
+.msg_box{
+  height:500px;border:1px solid #CCC;
+  overflow: scroll;
+  padding: 5px;
+}
+
+.selected{
+  background: rgb(195, 214, 219)!important;
+}
+.count_box{
+
+  border: 1px solid red;
+  border-radius: 5px;
+}

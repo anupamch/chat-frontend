@@ -1,0 +1,32 @@
+ <!-- Breadcrumbs-->
+ <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a rou>Dashboard</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a [routerLink]="['/logout/1']">logout</a>
+      </li>
+
+</ol>
+<div class="row">
+  <div class="col-md-12">
+  <div class="col-md-4" #userlist>
+    <div class="col-md-12">User List</div>
+    <div class="col-md-12 block-user user_{{user.id}}" style="padding: 0px;" *ngFor="let user of users" (click)="setUserToChat(user.id,$event)">
+      <div class="col-md-12">
+        <div class="col-md-1 on_user_{{user.id}} online_status"></div>
+      <div class="col-md-10">{{user.first_name}} {{user.last_name}}</div>
+      <div class="col-md-1 count_msg_{{user.id}} count_box" style="padding: 0px;"></div>
+    </div>
+      <div class="col-md-12"><small>{{user.email}}</small></div>
+
+    </div>
+  </div>
+  <div class="col-md-8">
+   <div class="col-md-12" class="msg_box"  #message_box></div>
+   <div class="col-md-10"><textarea class="form-control" [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()"></textarea></div>
+   <div class="col-md-2"><button (click)="sendMessage()">Send</button></div>
+  </div>
+  </div>
+
+</div>

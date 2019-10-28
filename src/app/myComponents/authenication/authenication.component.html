@@ -1,0 +1,42 @@
+<div class="row">
+
+  <div class="col-lg-12 text-center v-center">
+
+      <h1>Chat Application</h1>
+      <p class="lead">Enter your User Name to sign-in</p>
+
+      <br>
+      <br>
+
+      <form class="col-lg-12" [formGroup]="login_frm"  (ngSubmit)="authenticate(login_frm.value)" >
+
+          <div class="input-group" class="form-group" style="width: 540px; text-align: center; margin: 0 auto;">
+
+              <div [ngClass]="{'alert':message!='','alert-danger':true}">{{message}}</div>
+
+              <input class="form-control input-lg" title="Confidential signup."
+                  placeholder="Enter your user name" type="text" formControlName="name">
+                  <div class="alert" *ngIf="!login_frm.controls['name'].valid && login_frm.controls['name'].touched">
+                     <p *ngIf="login_frm.controls['name'].hasError('required')">{{requiredMsg}}</p>
+                     <p *ngIf="login_frm.controls['name'].hasError('pattern') &&
+                     !login_frm.controls['name'].hasError('required')">{{emailValidateMsg}}</p>
+                  </div>
+
+          </div>
+          <div class="col-lg-12">&nbsp;</div>
+          <div class="input-group" class="form-group" style="width: 540px; text-align: center; margin: 0 auto;">
+            <input class="form-control input-lg" title="Confidential signup."
+                placeholder="Enter your password" type="password" formControlName="password">
+                <div class="alert" *ngIf="!login_frm.controls['password'].valid && login_frm.controls['password'].touched">
+                    <p *ngIf="login_frm.controls['password'].hasError('required')">{{requiredMsg}}</p>
+                    <p *ngIf="login_frm.controls['password'].hasError('minlength') && !login_frm.controls['password'].hasError('required')">{{minlen8}}</p>
+                 </div>
+
+
+        </div>
+        <div class="col-lg-12">&nbsp;</div>
+
+            <button class="btn btn-lg btn-primary" type="submit"  >Login</button>
+      </form>
+  </div>
+</div>

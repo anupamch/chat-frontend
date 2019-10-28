@@ -1,0 +1,9 @@
+.block-user{
+  border: 1px solid #ccc;
+  margin: 5px;
+  padding: 5px;
+  background: #FFF;
+}
+.block-user:hover{
+  background: rgb(247, 240, 240);
+}
